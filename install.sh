@@ -131,6 +131,7 @@ if [[ "$method" == "curl" || "$method" == "wget" ]]; then
     git clone https://github.com/SurgePanel/SurgePanel.git
     sleep 4
     cd SurgePanel/
+    bash ./deploy.sh
 
 elif [[ "$method" == "github" ]]; then
     echo "Executing the script for GitHub clone installation..."
