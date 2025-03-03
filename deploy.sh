@@ -22,8 +22,8 @@ if ! [[ "$PORT" =~ ^[0-9]+$ ]] || [ "$PORT" -lt 1 ] || [ "$PORT" -gt 65535 ]; th
     echo "Error: Invalid port number. Please enter a number between 1 and 65535."
     exit 1
 fi
-#loading
-echo 'Your PHP server is running on port: $PORT'
+loading
+echo "Your PHP server is running on port: $PORT"
 echo 'This will now turn into a console output for PHP'
 sleep 2
 php -S localhost:$PORT -t ./web/

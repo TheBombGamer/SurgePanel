@@ -1,10 +1,7 @@
 #!/bin/bash
 # Surge Panel Installation Wrapper
 # Currently Supported Operating Systems:
-#   RHEL 5, 6, 7
-#   CentOS 5, 6, 7
-#   Debian 7, 8
-#   Ubuntu 12.04 - 18.04
+#   Ubuntu
 
 LOG_FILE="./logs/Surge-Panel.log"
 
@@ -49,8 +46,8 @@ echo "    \:::\  /:::/    /        \:::\__/:::/    /           !::! \::/____/   
 echo "     \:::\/:::/    /          \::::::::/    /            !::!  ~!               \:::\/:::/    /          \:::\   \/____/      "
 echo "      \::::::/    /            \::::::/    /             !::!   !                \::::::/    /            \:::\    \          "
 echo "       \::::/    /              \::::/    /              !::!   !                 \::::/    /              \:::\____\         "
-echo "        \::/    /                \::/____/                !:!   !                  \::/____/                \::/    /         "
-echo "         \/____/                  ~~                       !!___!                                            \/____/          "
+echo "        \::/    /                \::/    /                \:!   !                  \::/    /                \::/    /         "
+echo "         \/____/                  \/____/                  \!___!                   \/____/                  \/____/          "
 loading
 
 # Am I root? With Prompt
@@ -140,7 +137,8 @@ elif [[ "$method" == "github" ]]; then
 
 else
     echo "Invalid input. Please enter 'curl', 'wget', or 'github'."
-    echo "Now install it again cause you cant follow instructions"
+    echo "Now install it again cause you cant follow instructions, smh im disapointed"
+    sleep 2
 fi
 # if you see this thats a problem!
 echo 'how the fuck did you get this message to send? god damn you broke this shit!'
