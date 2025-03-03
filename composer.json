@@ -24,5 +24,6 @@
         "test": "phpunit"
     },
     "minimum-stability": "stable",
-    "prefer-stable": true
+    "prefer-stable": true,
+    "license": "AGPL-3.0"
 }
