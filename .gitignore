@@ -1,5 +1,11 @@
-# Object file
-*.o
-
-# Ada Library Information
-*.ali
+*.env
+*.log
+*.secret
+hidden/
+node_modules/
+*.db
+*.tmp
+*.cache
+*.conf
+config.php
+.config
