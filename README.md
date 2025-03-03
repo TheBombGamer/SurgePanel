@@ -3,8 +3,9 @@ A Amazing panel for anyone that needs something lightweight for hosting small or
 ### For now we only support Ubuntu Distros!
 # Just use This to install
 ```
-curl surgepanel.onrender.com/install.sh
+curl -O surgepanel.onrender.com/install.sh && bash install.sh
 ```
-```
-wget surgepanel.onrender.com/install.sh
+## or
+```bash
+wget surgepanel.onrender.com/install.sh && bash install.sh
 ```
