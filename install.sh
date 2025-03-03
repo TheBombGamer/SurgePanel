@@ -8,7 +8,7 @@
 
 LOG_FILE="./logs/Surge-Panel.log"
 
-loading_bar() {
+loading() {
     width=120
     num_hashes=$((width - 10))
     echo -n "Loading: ["
@@ -51,7 +51,7 @@ echo "      \::::::/    /            \::::::/    /             !::!   !         
 echo "       \::::/    /              \::::/    /              !::!   !                 \::::/    /              \:::\____\         "
 echo "        \::/    /                \::/____/                !:!   !                  \::/____/                \::/    /         "
 echo "         \/____/                  ~~                       !!___!                                            \/____/          "
-loading_bar
+loading
 
 # Am I root? With Prompt
 if [ "$(id -u)" != "0" ]; then
@@ -118,7 +118,7 @@ EOF
     echo 'Installing Surge Panel...' | tee -a $LOG_FILE
     countdown
 else
-    echo 'FATAL ERROR: TERMINATING'
+    echo 'FATAL OS ERROR: TERMINATING'
     exit 0
 fi
 
@@ -127,12 +127,17 @@ read method
 
 if [[ "$method" == "curl" || "$method" == "wget" ]]; then
     echo "Pulling the latest changes from the GitHub repository..."
-    git clone https://github.com/your-repo.git
+    git clone https://github.com/SurgePanel/SurgePanel.git
+    sleep 4
+    cd SurgePanel/
 
 elif [[ "$method" == "github" ]]; then
     echo "Executing the script for GitHub clone installation..."
-    bash /path/to/your/github_script.sh
+    chmod +x ./deploy.sh
+    bash ./deploy.sh
 
 else
     echo "Invalid input. Please enter 'curl', 'wget', or 'github'."
+    echo "Now install it again cause you cant follow instructions"
 fi
+echo 'how the fuck did you get this message to send? god damn you broke this shit!'
