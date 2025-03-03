@@ -93,6 +93,7 @@ if [ "$OS_SUPPORTED" == "true" ]; then
 # Install PHP
     echo 'Installing Dependencies...' | tee -a $LOG_FILE
     sudo apt install -qq php php-cli php-fpm php-mysql php-xml php-mbstring php-curl php-zip php-gd php-json php-intl php-soap php-redis php-memcached php-xdebug php-openssl php-gmp php-bz2 php-tidy php-xmlrpc php-sybase php-sybase-ct php-mcrypt php-ldap php-exif php-fileinfo php-ffi -y
+    loading
     echo 'Complete PHP Installation successfully' | tee -a $LOG_FILE
 
 # MYSQL
@@ -100,7 +101,7 @@ if [ "$OS_SUPPORTED" == "true" ]; then
     sudo apt install -qq -y mysql-server
     echo "Starting MySQL service..." | tee -a $LOG_FILE
     sudo systemctl start mysql
-
+    loading
 # Secure MySQL
     echo "Securing MySQL installation..." | tee -a $LOG_FILE
     sudo mysql_secure_installation <<EOF
@@ -140,4 +141,7 @@ else
     echo "Invalid input. Please enter 'curl', 'wget', or 'github'."
     echo "Now install it again cause you cant follow instructions"
 fi
+# if you see this thats a problem!
 echo 'how the fuck did you get this message to send? god damn you broke this shit!'
+echo '# if you see this thats a problem!'
+exit 0
