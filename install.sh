@@ -89,7 +89,7 @@ fi
 if [ "$OS_SUPPORTED" == "true" ]; then
 # Install PHP
     echo 'Installing Dependencies...' | tee -a $LOG_FILE
-    sudo apt install -qq php php-cli php-fpm php-mysql php-xml php-mbstring php-curl php-zip php-gd php-json php-intl php-soap php-redis php-memcached php-xdebug php-openssl php-gmp php-bz2 php-tidy php-xmlrpc php-sybase php-sybase-ct php-mcrypt php-ldap php-exif php-fileinfo php-ffi -y
+    sudo apt install -qq php php-cli php-fpm php-mysql php-pgsql php-xml php-mbstring php-curl php-zip php-gd php-json php-intl php-soap php-redis php-memcached php-xdebug php-openssl php-gmp php-bz2 php-tidy php-xmlrpc php-sybase php-sybase-ct php-mcrypt php-ldap php-exif php-fileinfo php-ffi -y
     loading
     echo 'Complete PHP Installation successfully' | tee -a $LOG_FILE
 

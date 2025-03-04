@@ -25,5 +25,5 @@ fi
 loading
 echo "Your PHP server is running on port: $PORT"
 echo 'This will now turn into a console output for PHP'
-sleep 2
+sleep 1
 php -S localhost:$PORT -t ./web/

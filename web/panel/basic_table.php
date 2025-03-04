@@ -24,12 +24,6 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
     <!-- Custom styles for this template -->
     <link href="assets/css/style.css" rel="stylesheet">
     <link href="assets/css/style-responsive.css" rel="stylesheet">
-
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
   </head>
 
   <body>
@@ -187,9 +181,9 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
                 <!--  notification end -->
             </div>
             <div class="top-menu">
-            	<ul class="nav pull-right top-menu">
+                <ul class="nav pull-right top-menu">
                     <li><a class="logout" href="login.php">Logout</a></li>
-            	</ul>
+                </ul>
             </div>
         </header>
       <!--header end-->
@@ -203,9 +197,9 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
               <!-- sidebar menu start-->
               <ul class="sidebar-menu" id="nav-accordion">
               
-              	  <p class="centered"><a href="profile.php"><img src="assets/img/ui-sam.jpg" class="img-circle" width="60"></a></p>
-              	  <h5 class="centered">Marcel Newman</h5>
-              	  	
+                    <p class="centered"><a href="profile.php"><img src="assets/img/ui-sam.jpg" class="img-circle" width="60"></a></p>
+                    <h5 class="centered">Marcel Newman</h5>
+                        
                   <li class="mt">
                       <a href="index.php">
                           <i class="fa fa-dashboard"></i>
@@ -289,90 +283,90 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
       <!--main content start-->
       <section id="main-content">
           <section class="wrapper">
-          	<h3><i class="fa fa-angle-right"></i> Basic Table Examples</h3>
-				<div class="row">
-				
-	                  <div class="col-md-12">
-	                  	  <div class="content-panel">
-	                  	  	  <h4><i class="fa fa-angle-right"></i> Basic Table</h4>
-	                  	  	  <hr>
-		                      <table class="table">
-		                          <thead>
-		                          <tr>
-		                              <th>#</th>
-		                              <th>First Name</th>
-		                              <th>Last Name</th>
-		                              <th>Username</th>
-		                          </tr>
-		                          </thead>
-		                          <tbody>
-		                          <tr>
-		                              <td>1</td>
-		                              <td>Mark</td>
-		                              <td>Otto</td>
-		                              <td>@mdo</td>
-		                          </tr>
-		                          <tr>
-		                              <td>2</td>
-		                              <td>Jacob</td>
-		                              <td>Thornton</td>
-		                              <td>@fat</td>
-		                          </tr>
-		                          <tr>
-		                              <td>3</td>
-		                              <td>Larry</td>
-		                              <td>the Bird</td>
-		                              <td>@twitter</td>
-		                          </tr>
-		                          </tbody>
-		                      </table>
-	                  	  </div><! --/content-panel -->
-	                  </div><!-- /col-md-12 -->
+              <h3><i class="fa fa-angle-right"></i> Basic Table Examples</h3>
+                <div class="row">
+                
+                      <div class="col-md-12">
+                            <div class="content-panel">
+                                  <h4><i class="fa fa-angle-right"></i> Basic Table</h4>
+                                  <hr>
+                              <table class="table">
+                                  <thead>
+                                  <tr>
+                                      <th>#</th>
+                                      <th>First Name</th>
+                                      <th>Last Name</th>
+                                      <th>Username</th>
+                                  </tr>
+                                  </thead>
+                                  <tbody>
+                                  <tr>
+                                      <td>1</td>
+                                      <td>Mark</td>
+                                      <td>Otto</td>
+                                      <td>@mdo</td>
+                                  </tr>
+                                  <tr>
+                                      <td>2</td>
+                                      <td>Jacob</td>
+                                      <td>Thornton</td>
+                                      <td>@fat</td>
+                                  </tr>
+                                  <tr>
+                                      <td>3</td>
+                                      <td>Larry</td>
+                                      <td>the Bird</td>
+                                      <td>@twitter</td>
+                                  </tr>
+                                  </tbody>
+                              </table>
+                            </div><! --/content-panel -->
+                      </div><!-- /col-md-12 -->
                   
-	                  <div class="col-md-12 mt">
-	                  	<div class="content-panel">
-	                          <table class="table table-hover">
-	                  	  	  <h4><i class="fa fa-angle-right"></i> Hover Table</h4>
-	                  	  	  <hr>
-	                              <thead>
-	                              <tr>
-	                                  <th>#</th>
-	                                  <th>First Name</th>
-	                                  <th>Last Name</th>
-	                                  <th>Username</th>
-	                              </tr>
-	                              </thead>
-	                              <tbody>
-	                              <tr>
-	                                  <td>1</td>
-	                                  <td>Mark</td>
-	                                  <td>Otto</td>
-	                                  <td>@mdo</td>
-	                              </tr>
-	                              <tr>
-	                                  <td>2</td>
-	                                  <td>Jacob</td>
-	                                  <td>Thornton</td>
-	                                  <td>@fat</td>
-	                              </tr>
-	                              <tr>
-	                                  <td>3</td>
-	                                  <td>Simon</td>
-	                                  <td>Mosa</td>
-	                                  <td>@twitter</td>
-	                              </tr>
-	                              </tbody>
-	                          </table>
-	                  	  </div><! --/content-panel -->
-	                  </div><!-- /col-md-12 -->
-				</div><!-- row -->
+                      <div class="col-md-12 mt">
+                          <div class="content-panel">
+                              <table class="table table-hover">
+                                  <h4><i class="fa fa-angle-right"></i> Hover Table</h4>
+                                  <hr>
+                                  <thead>
+                                  <tr>
+                                      <th>#</th>
+                                      <th>First Name</th>
+                                      <th>Last Name</th>
+                                      <th>Username</th>
+                                  </tr>
+                                  </thead>
+                                  <tbody>
+                                  <tr>
+                                      <td>1</td>
+                                      <td>Mark</td>
+                                      <td>Otto</td>
+                                      <td>@mdo</td>
+                                  </tr>
+                                  <tr>
+                                      <td>2</td>
+                                      <td>Jacob</td>
+                                      <td>Thornton</td>
+                                      <td>@fat</td>
+                                  </tr>
+                                  <tr>
+                                      <td>3</td>
+                                      <td>Simon</td>
+                                      <td>Mosa</td>
+                                      <td>@twitter</td>
+                                  </tr>
+                                  </tbody>
+                              </table>
+                            </div><! --/content-panel -->
+                      </div><!-- /col-md-12 -->
+                </div><!-- row -->
 
               <div class="row mt">
                   <div class="col-md-12">
                       <div class="content-panel">
                           <table class="table table-striped table-advance table-hover">
-	                  	  	  <h4><i class="fa fa-angle-right"></i> Advanced Table</h4>
-	                  	  	  <hr>
+                                  <h4><i class="fa fa-angle-right"></i> Advanced Table</h4>
+                                  <hr>
                               <thead>
                               <tr>
                                   <th><i class="fa fa-bullhorn"></i> Company</th>
@@ -456,7 +450,7 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
                   </div><!-- /col-md-12 -->
               </div><!-- /row -->
 
-		</section><! --/wrapper -->
+        </section><! --/wrapper -->
       </section><!-- /MAIN CONTENT -->
 
       <!--main content end-->
