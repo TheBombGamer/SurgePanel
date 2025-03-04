@@ -1,3 +1,10 @@
+<?php
+session_start();
+if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
+    header('Location: /login.php');
+    exit;
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -13,6 +20,7 @@
     <link href="assets/css/bootstrap.css" rel="stylesheet">
     <!--external css-->
     <link href="assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <link href="assets/js/fullcalendar/bootstrap-fullcalendar.css" rel="stylesheet" />
         
     <!-- Custom styles for this template -->
     <link href="assets/css/style.css" rel="stylesheet">
@@ -37,14 +45,14 @@
                   <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
               </div>
             <!--logo start-->
-            <a href="index.html" class="logo"><b>DASHGUM FREE</b></a>
+            <a href="index.php" class="logo"><b>DASHGUM FREE</b></a>
             <!--logo end-->
             <div class="nav notify-row" id="top_menu">
                 <!--  notification start -->
                 <ul class="nav top-menu">
                     <!-- settings start -->
                     <li class="dropdown">
-                        <a data-toggle="dropdown" class="dropdown-toggle" href="index.html#">
+                        <a data-toggle="dropdown" class="dropdown-toggle" href="index.php#">
                             <i class="fa fa-tasks"></i>
                             <span class="badge bg-theme">4</span>
                         </a>
@@ -54,7 +62,7 @@
                                 <p class="green">You have 4 pending tasks</p>
                             </li>
                             <li>
-                                <a href="index.html#">
+                                <a href="index.php#">
                                     <div class="task-info">
                                         <div class="desc">DashGum Admin Panel</div>
                                         <div class="percent">40%</div>
@@ -67,7 +75,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="index.html#">
+                                <a href="index.php#">
                                     <div class="task-info">
                                         <div class="desc">Database Update</div>
                                         <div class="percent">60%</div>
@@ -80,7 +88,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="index.html#">
+                                <a href="index.php#">
                                     <div class="task-info">
                                         <div class="desc">Product Development</div>
                                         <div class="percent">80%</div>
@@ -93,7 +101,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="index.html#">
+                                <a href="index.php#">
                                     <div class="task-info">
                                         <div class="desc">Payments Sent</div>
                                         <div class="percent">70%</div>
@@ -113,7 +121,7 @@
                     <!-- settings end -->
                     <!-- inbox dropdown start-->
                     <li id="header_inbox_bar" class="dropdown">
-                        <a data-toggle="dropdown" class="dropdown-toggle" href="index.html#">
+                        <a data-toggle="dropdown" class="dropdown-toggle" href="index.php#">
                             <i class="fa fa-envelope-o"></i>
                             <span class="badge bg-theme">5</span>
                         </a>
@@ -123,7 +131,7 @@
                                 <p class="green">You have 5 new messages</p>
                             </li>
                             <li>
-                                <a href="index.html#">
+                                <a href="index.php#">
                                     <span class="photo"><img alt="avatar" src="assets/img/ui-zac.jpg"></span>
                                     <span class="subject">
                                     <span class="from">Zac Snider</span>
@@ -135,7 +143,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="index.html#">
+                                <a href="index.php#">
                                     <span class="photo"><img alt="avatar" src="assets/img/ui-divya.jpg"></span>
                                     <span class="subject">
                                     <span class="from">Divya Manian</span>
@@ -147,7 +155,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="index.html#">
+                                <a href="index.php#">
                                     <span class="photo"><img alt="avatar" src="assets/img/ui-danro.jpg"></span>
                                     <span class="subject">
                                     <span class="from">Dan Rogers</span>
@@ -159,7 +167,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="index.html#">
+                                <a href="index.php#">
                                     <span class="photo"><img alt="avatar" src="assets/img/ui-sherman.jpg"></span>
                                     <span class="subject">
                                     <span class="from">Dj Sherman</span>
@@ -171,7 +179,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="index.html#">See all messages</a>
+                                <a href="index.php#">See all messages</a>
                             </li>
                         </ul>
                     </li>
@@ -181,7 +189,7 @@
             </div>
             <div class="top-menu">
             	<ul class="nav pull-right top-menu">
-                    <li><a class="logout" href="login.html">Logout</a></li>
+                    <li><a class="logout" href="login.php">Logout</a></li>
             	</ul>
             </div>
         </header>
@@ -196,11 +204,11 @@
               <!-- sidebar menu start-->
               <ul class="sidebar-menu" id="nav-accordion">
               
-              	  <p class="centered"><a href="profile.html"><img src="assets/img/ui-sam.jpg" class="img-circle" width="60"></a></p>
+              	  <p class="centered"><a href="profile.php"><img src="assets/img/ui-sam.jpg" class="img-circle" width="60"></a></p>
               	  <h5 class="centered">Marcel Newman</h5>
               	  	
                   <li class="mt">
-                      <a href="index.html">
+                      <a href="index.php">
                           <i class="fa fa-dashboard"></i>
                           <span>Dashboard</span>
                       </a>
@@ -212,32 +220,32 @@
                           <span>UI Elements</span>
                       </a>
                       <ul class="sub">
-                          <li><a  href="general.html">General</a></li>
-                          <li><a  href="buttons.html">Buttons</a></li>
-                          <li><a  href="panels.html">Panels</a></li>
+                          <li><a  href="general.php">General</a></li>
+                          <li><a  href="buttons.php">Buttons</a></li>
+                          <li><a  href="panels.php">Panels</a></li>
                       </ul>
                   </li>
 
                   <li class="sub-menu">
-                      <a href="javascript:;" >
+                      <a class="active" href="javascript:;" >
                           <i class="fa fa-cogs"></i>
                           <span>Components</span>
                       </a>
                       <ul class="sub">
-                          <li><a  href="calendar.html">Calendar</a></li>
-                          <li><a  href="gallery.html">Gallery</a></li>
-                          <li><a  href="todo_list.html">Todo List</a></li>
+                          <li class="active"><a  href="calendar.php">Calendar</a></li>
+                          <li><a  href="gallery.php">Gallery</a></li>
+                          <li><a  href="todo_list.php">Todo List</a></li>
                       </ul>
                   </li>
                   <li class="sub-menu">
-                      <a class="active" href="javascript:;" >
+                      <a href="javascript:;" >
                           <i class="fa fa-book"></i>
                           <span>Extra Pages</span>
                       </a>
                       <ul class="sub">
-                          <li class="active"><a  href="blank.html">Blank Page</a></li>
-                          <li><a  href="login.html">Login</a></li>
-                          <li><a  href="lock_screen.html">Lock Screen</a></li>
+                          <li><a  href="blank.php">Blank Page</a></li>
+                          <li><a  href="login.php">Login</a></li>
+                          <li><a  href="lock_screen.php">Lock Screen</a></li>
                       </ul>
                   </li>
                   <li class="sub-menu">
@@ -246,7 +254,7 @@
                           <span>Forms</span>
                       </a>
                       <ul class="sub">
-                          <li><a  href="form_component.html">Form Components</a></li>
+                          <li><a  href="form_component.php">Form Components</a></li>
                       </ul>
                   </li>
                   <li class="sub-menu">
@@ -255,8 +263,8 @@
                           <span>Data Tables</span>
                       </a>
                       <ul class="sub">
-                          <li><a  href="basic_table.html">Basic Table</a></li>
-                          <li><a  href="responsive_table.html">Responsive Table</a></li>
+                          <li><a  href="basic_table.php">Basic Table</a></li>
+                          <li><a  href="responsive_table.php">Responsive Table</a></li>
                       </ul>
                   </li>
                   <li class="sub-menu">
@@ -265,8 +273,8 @@
                           <span>Charts</span>
                       </a>
                       <ul class="sub">
-                          <li><a  href="morris.html">Morris</a></li>
-                          <li><a  href="chartjs.html">Chartjs</a></li>
+                          <li><a  href="morris.php">Morris</a></li>
+                          <li><a  href="chartjs.php">Chartjs</a></li>
                       </ul>
                   </li>
 
@@ -275,20 +283,43 @@
           </div>
       </aside>
       <!--sidebar end-->
-      
+
       <!-- **********************************************************************************************************************************************************
       MAIN CONTENT
       *********************************************************************************************************************************************************** -->
       <!--main content start-->
       <section id="main-content">
-          <section class="wrapper site-min-height">
-          	<h3><i class="fa fa-angle-right"></i> Blank Page</h3>
-          	<div class="row mt">
-          		<div class="col-lg-12">
-          		<p>Place your content here.</p>
-          		</div>
-          	</div>
-			
+          <section class="wrapper">
+          	<h3><i class="fa fa-angle-right"></i> Calendar</h3>
+              <!-- page start-->
+              <div class="row mt">
+                  <aside class="col-lg-3 mt">
+                      <h4><i class="fa fa-angle-right"></i> Draggable Events</h4>
+                      <div id="external-events">
+                          <div class="external-event label label-theme">My Event 1</div>
+                          <div class="external-event label label-success">My Event 2</div>
+                          <div class="external-event label label-info">My Event 3</div>
+                          <div class="external-event label label-warning">My Event 4</div>
+                          <div class="external-event label label-danger">My Event 5</div>
+                          <div class="external-event label label-default">My Event 6</div>
+                          <div class="external-event label label-theme">My Event 7</div>
+                          <div class="external-event label label-info">My Event 8</div>
+                          <div class="external-event label label-success">My Event 9</div>
+                          <p class="drop-after">
+                              <input type="checkbox" id="drop-remove">
+                              Remove After Drop
+                          </p>
+                      </div>
+                  </aside>
+                  <aside class="col-lg-9 mt">
+                      <section class="panel">
+                          <div class="panel-body">
+                              <div id="calendar" class="has-toolbar"></div>
+                          </div>
+                      </section>
+                  </aside>
+              </div>
+              <!-- page end-->
 		</section><! --/wrapper -->
       </section><!-- /MAIN CONTENT -->
 
@@ -297,7 +328,7 @@
       <footer class="site-footer">
           <div class="text-center">
               2014 - Alvarez.is
-              <a href="blank.html#" class="go-top">
+              <a href="calendar.php#" class="go-top">
                   <i class="fa fa-angle-up"></i>
               </a>
           </div>
@@ -307,9 +338,9 @@
 
     <!-- js placed at the end of the document so the pages load faster -->
     <script src="assets/js/jquery.js"></script>
-    <script src="assets/js/bootstrap.min.js"></script>
     <script src="assets/js/jquery-ui-1.9.2.custom.min.js"></script>
-    <script src="assets/js/jquery.ui.touch-punch.min.js"></script>
+	<script src="assets/js/fullcalendar/fullcalendar.min.js"></script>    
+    <script src="assets/js/bootstrap.min.js"></script>
     <script class="include" type="text/javascript" src="assets/js/jquery.dcjqaccordion.2.7.js"></script>
     <script src="assets/js/jquery.scrollTo.min.js"></script>
     <script src="assets/js/jquery.nicescroll.js" type="text/javascript"></script>
@@ -319,12 +350,13 @@
     <script src="assets/js/common-scripts.js"></script>
 
     <!--script for this page-->
-    
+	<script src="assets/js/calendar-conf-events.js"></script>    
+  
   <script>
       //custom select box
 
       $(function(){
-          $('select.styled').customSelect();
+          $("select.styled").customSelect();
       });
 
   </script>

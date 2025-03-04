@@ -1,3 +1,10 @@
+<?php
+session_start();
+if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
+    header('Location: login.php');
+    exit;
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -13,13 +20,11 @@
     <link href="assets/css/bootstrap.css" rel="stylesheet">
     <!--external css-->
     <link href="assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
-    <link href="assets/js/fancybox/jquery.fancybox.css" rel="stylesheet" />
+	<link rel="stylesheet" href="http://cdn.oesmith.co.uk/morris-0.4.3.min.css">    
+        
     <!-- Custom styles for this template -->
     <link href="assets/css/style.css" rel="stylesheet">
     <link href="assets/css/style-responsive.css" rel="stylesheet">
-
-    <script src="assets/js/jquery.js"></script>
-
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -40,14 +45,14 @@
                   <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
               </div>
             <!--logo start-->
-            <a href="index.html" class="logo"><b>DASHGUM FREE</b></a>
+            <a href="index.php" class="logo"><b>DASHGUM FREE</b></a>
             <!--logo end-->
             <div class="nav notify-row" id="top_menu">
                 <!--  notification start -->
                 <ul class="nav top-menu">
                     <!-- settings start -->
                     <li class="dropdown">
-                        <a data-toggle="dropdown" class="dropdown-toggle" href="index.html#">
+                        <a data-toggle="dropdown" class="dropdown-toggle" href="index.php#">
                             <i class="fa fa-tasks"></i>
                             <span class="badge bg-theme">4</span>
                         </a>
@@ -57,7 +62,7 @@
                                 <p class="green">You have 4 pending tasks</p>
                             </li>
                             <li>
-                                <a href="index.html#">
+                                <a href="index.php#">
                                     <div class="task-info">
                                         <div class="desc">DashGum Admin Panel</div>
                                         <div class="percent">40%</div>
@@ -70,7 +75,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="index.html#">
+                                <a href="index.php#">
                                     <div class="task-info">
                                         <div class="desc">Database Update</div>
                                         <div class="percent">60%</div>
@@ -83,7 +88,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="index.html#">
+                                <a href="index.php#">
                                     <div class="task-info">
                                         <div class="desc">Product Development</div>
                                         <div class="percent">80%</div>
@@ -96,7 +101,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="index.html#">
+                                <a href="index.php#">
                                     <div class="task-info">
                                         <div class="desc">Payments Sent</div>
                                         <div class="percent">70%</div>
@@ -116,7 +121,7 @@
                     <!-- settings end -->
                     <!-- inbox dropdown start-->
                     <li id="header_inbox_bar" class="dropdown">
-                        <a data-toggle="dropdown" class="dropdown-toggle" href="index.html#">
+                        <a data-toggle="dropdown" class="dropdown-toggle" href="index.php#">
                             <i class="fa fa-envelope-o"></i>
                             <span class="badge bg-theme">5</span>
                         </a>
@@ -126,7 +131,7 @@
                                 <p class="green">You have 5 new messages</p>
                             </li>
                             <li>
-                                <a href="index.html#">
+                                <a href="index.php#">
                                     <span class="photo"><img alt="avatar" src="assets/img/ui-zac.jpg"></span>
                                     <span class="subject">
                                     <span class="from">Zac Snider</span>
@@ -138,7 +143,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="index.html#">
+                                <a href="index.php#">
                                     <span class="photo"><img alt="avatar" src="assets/img/ui-divya.jpg"></span>
                                     <span class="subject">
                                     <span class="from">Divya Manian</span>
@@ -150,7 +155,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="index.html#">
+                                <a href="index.php#">
                                     <span class="photo"><img alt="avatar" src="assets/img/ui-danro.jpg"></span>
                                     <span class="subject">
                                     <span class="from">Dan Rogers</span>
@@ -162,7 +167,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="index.html#">
+                                <a href="index.php#">
                                     <span class="photo"><img alt="avatar" src="assets/img/ui-sherman.jpg"></span>
                                     <span class="subject">
                                     <span class="from">Dj Sherman</span>
@@ -174,7 +179,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="index.html#">See all messages</a>
+                                <a href="index.php#">See all messages</a>
                             </li>
                         </ul>
                     </li>
@@ -184,7 +189,7 @@
             </div>
             <div class="top-menu">
             	<ul class="nav pull-right top-menu">
-                    <li><a class="logout" href="login.html">Logout</a></li>
+                    <li><a class="logout" href="login.php">Logout</a></li>
             	</ul>
             </div>
         </header>
@@ -199,11 +204,11 @@
               <!-- sidebar menu start-->
               <ul class="sidebar-menu" id="nav-accordion">
               
-              	  <p class="centered"><a href="profile.html"><img src="assets/img/ui-sam.jpg" class="img-circle" width="60"></a></p>
+              	  <p class="centered"><a href="profile.php"><img src="assets/img/ui-sam.jpg" class="img-circle" width="60"></a></p>
               	  <h5 class="centered">Marcel Newman</h5>
               	  	
                   <li class="mt">
-                      <a href="index.html">
+                      <a href="index.php">
                           <i class="fa fa-dashboard"></i>
                           <span>Dashboard</span>
                       </a>
@@ -215,21 +220,21 @@
                           <span>UI Elements</span>
                       </a>
                       <ul class="sub">
-                          <li><a  href="general.html">General</a></li>
-                          <li><a  href="buttons.html">Buttons</a></li>
-                          <li><a  href="panels.html">Panels</a></li>
+                          <li><a  href="general.php">General</a></li>
+                          <li><a  href="buttons.php">Buttons</a></li>
+                          <li><a  href="panels.php">Panels</a></li>
                       </ul>
                   </li>
 
                   <li class="sub-menu">
-                      <a class="active" href="javascript:;" >
+                      <a href="javascript:;" >
                           <i class="fa fa-cogs"></i>
                           <span>Components</span>
                       </a>
                       <ul class="sub">
-                          <li><a  href="calendar.html">Calendar</a></li>
-                          <li class="active"><a  href="gallery.html">Gallery</a></li>
-                          <li><a  href="todo_list.html">Todo List</a></li>
+                          <li><a  href="calendar.php">Calendar</a></li>
+                          <li><a  href="gallery.php">Gallery</a></li>
+                          <li><a  href="todo_list.php">Todo List</a></li>
                       </ul>
                   </li>
                   <li class="sub-menu">
@@ -238,9 +243,9 @@
                           <span>Extra Pages</span>
                       </a>
                       <ul class="sub">
-                          <li><a  href="blank.html">Blank Page</a></li>
-                          <li><a  href="login.html">Login</a></li>
-                          <li><a  href="lock_screen.html">Lock Screen</a></li>
+                          <li><a  href="blank.php">Blank Page</a></li>
+                          <li><a  href="login.php">Login</a></li>
+                          <li><a  href="lock_screen.php">Lock Screen</a></li>
                       </ul>
                   </li>
                   <li class="sub-menu">
@@ -249,7 +254,7 @@
                           <span>Forms</span>
                       </a>
                       <ul class="sub">
-                          <li><a  href="form_component.html">Form Components</a></li>
+                          <li><a  href="form_component.php">Form Components</a></li>
                       </ul>
                   </li>
                   <li class="sub-menu">
@@ -258,18 +263,18 @@
                           <span>Data Tables</span>
                       </a>
                       <ul class="sub">
-                          <li><a  href="basic_table.html">Basic Table</a></li>
-                          <li><a  href="responsive_table.html">Responsive Table</a></li>
+                          <li><a  href="basic_table.php">Basic Table</a></li>
+                          <li><a  href="responsive_table.php">Responsive Table</a></li>
                       </ul>
                   </li>
                   <li class="sub-menu">
-                      <a href="javascript:;" >
+                      <a class="active" href="javascript:;" >
                           <i class=" fa fa-bar-chart-o"></i>
                           <span>Charts</span>
                       </a>
                       <ul class="sub">
-                          <li><a  href="morris.html">Morris</a></li>
-                          <li><a  href="chartjs.html">Chartjs</a></li>
+                          <li class="active"><a  href="morris.php">Morris</a></li>
+                          <li><a  href="chartjs.php">Chartjs</a></li>
                       </ul>
                   </li>
 
@@ -285,132 +290,48 @@
       <!--main content start-->
       <section id="main-content">
           <section class="wrapper site-min-height">
-          	<h3><i class="fa fa-angle-right"></i> Gallery</h3>
-          	<hr>
-				<div class="row mt">
-					<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 desc">
-						<div class="project-wrapper">
-		                    <div class="project">
-		                        <div class="photo-wrapper">
-		                            <div class="photo">
-		                            	<a class="fancybox" href="assets/img/portfolio/port04.jpg"><img class="img-responsive" src="assets/img/portfolio/port04.jpg" alt=""></a>
-		                            </div>
-		                            <div class="overlay"></div>
-		                        </div>
-		                    </div>
-		                </div>
-					</div><!-- col-lg-4 -->
-					
-					<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 desc">
-						<div class="project-wrapper">
-		                    <div class="project">
-		                        <div class="photo-wrapper">
-		                            <div class="photo">
-		                            	<a class="fancybox" href="assets/img/portfolio/port05.jpg"><img class="img-responsive" src="assets/img/portfolio/port05.jpg" alt=""></a>
-		                            </div>
-		                            <div class="overlay"></div>
-		                        </div>
-		                    </div>
-		                </div>
-					</div><!-- col-lg-4 -->
-					
-					<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 desc">
-						<div class="project-wrapper">
-		                    <div class="project">
-		                        <div class="photo-wrapper">
-		                            <div class="photo">
-		                            	<a class="fancybox" href="assets/img/portfolio/port06.jpg"><img class="img-responsive" src="assets/img/portfolio/port06.jpg" alt=""></a>
-		                            </div>
-		                            <div class="overlay"></div>
-		                        </div>
-		                    </div>
-		                </div>
-					</div><!-- col-lg-4 -->
-				</div><!-- /row -->
-
-				<div class="row mt">
-					<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 desc">
-						<div class="project-wrapper">
-		                    <div class="project">
-		                        <div class="photo-wrapper">
-		                            <div class="photo">
-		                            	<a class="fancybox" href="assets/img/portfolio/port01.jpg"><img class="img-responsive" src="assets/img/portfolio/port01.jpg" alt=""></a>
-		                            </div>
-		                            <div class="overlay"></div>
-		                        </div>
-		                    </div>
-		                </div>
-					</div><!-- col-lg-4 -->
-					
-					<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 desc">
-						<div class="project-wrapper">
-		                    <div class="project">
-		                        <div class="photo-wrapper">
-		                            <div class="photo">
-		                            	<a class="fancybox" href="assets/img/portfolio/port02.jpg"><img class="img-responsive" src="assets/img/portfolio/port02.jpg" alt=""></a>
-		                            </div>
-		                            <div class="overlay"></div>
-		                        </div>
-		                    </div>
-		                </div>
-					</div><!-- col-lg-4 -->
-					
-					<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 desc">
-						<div class="project-wrapper">
-		                    <div class="project">
-		                        <div class="photo-wrapper">
-		                            <div class="photo">
-		                            	<a class="fancybox" href="assets/img/portfolio/port03.jpg"><img class="img-responsive" src="assets/img/portfolio/port03.jpg" alt=""></a>
-		                            </div>
-		                            <div class="overlay"></div>
-		                        </div>
-		                    </div>
-		                </div>
-					</div><!-- col-lg-4 -->
-				</div><!-- /row -->
-
-				<div class="row mt mb">
-					<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 desc">
-						<div class="project-wrapper">
-		                    <div class="project">
-		                        <div class="photo-wrapper">
-		                            <div class="photo">
-		                            	<a class="fancybox" href="assets/img/portfolio/port04.jpg"><img class="img-responsive" src="assets/img/portfolio/port04.jpg" alt=""></a>
-		                            </div>
-		                            <div class="overlay"></div>
-		                        </div>
-		                    </div>
-		                </div>
-					</div><!-- col-lg-4 -->
-					
-					<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 desc">
-						<div class="project-wrapper">
-		                    <div class="project">
-		                        <div class="photo-wrapper">
-		                            <div class="photo">
-		                            	<a class="fancybox" href="assets/img/portfolio/port05.jpg"><img class="img-responsive" src="assets/img/portfolio/port05.jpg" alt=""></a>
-		                            </div>
-		                            <div class="overlay"></div>
-		                        </div>
-		                    </div>
-		                </div>
-					</div><!-- col-lg-4 -->
-					
-					<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 desc">
-						<div class="project-wrapper">
-		                    <div class="project">
-		                        <div class="photo-wrapper">
-		                            <div class="photo">
-		                            	<a class="fancybox" href="assets/img/portfolio/port06.jpg"><img class="img-responsive" src="assets/img/portfolio/port06.jpg" alt=""></a>
-		                            </div>
-		                            <div class="overlay"></div>
-		                        </div>
-		                    </div>
-		                </div>
-					</div><!-- col-lg-4 -->
-				</div><!-- /row -->
-
-		</section><! --/wrapper -->
+          <h3><i class="fa fa-angle-right"></i> Morris Charts</h3>
+              <!-- page start-->
+              <div id="morris">
+                  <div class="row mt">
+                      <div class="col-lg-6">
+                          <div class="content-panel">
+                              <h4><i class="fa fa-angle-right"></i> Chart Example 1</h4>
+                              <div class="panel-body">
+                                  <div id="hero-graph" class="graph"></div>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="col-lg-6">
+                          <div class="content-panel">
+                              <h4><i class="fa fa-angle-right"></i> Chart Example 2</h4>
+                              <div class="panel-body">
+                                  <div id="hero-bar" class="graph"></div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="row mt">
+                      <div class="col-lg-6">
+                          <div class="content-panel">
+                              <h4><i class="fa fa-angle-right"></i> Chart Example 3</h4>
+                              <div class="panel-body">
+                                  <div id="hero-area" class="graph"></div>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="col-lg-6">
+                          <div class="content-panel">
+                              <h4><i class="fa fa-angle-right"></i> Chart Example 4</h4>
+                              <div class="panel-body">
+                                  <div id="hero-donut" class="graph"></div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <!-- page end-->
+          </section>
       </section><!-- /MAIN CONTENT -->
 
       <!--main content end-->
@@ -418,7 +339,7 @@
       <footer class="site-footer">
           <div class="text-center">
               2014 - Alvarez.is
-              <a href="gallery.html#" class="go-top">
+              <a href="morris.php#" class="go-top">
                   <i class="fa fa-angle-up"></i>
               </a>
           </div>
@@ -427,7 +348,7 @@
   </section>
 
     <!-- js placed at the end of the document so the pages load faster -->
-	<script src="assets/js/fancybox/jquery.fancybox.js"></script>    
+    <script src="assets/js/jquery.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>
     <script class="include" type="text/javascript" src="assets/js/jquery.dcjqaccordion.2.7.js"></script>
     <script src="assets/js/jquery.scrollTo.min.js"></script>
@@ -435,23 +356,18 @@
 
 
     <!--common script for all pages-->
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
+	<script src="http://cdn.oesmith.co.uk/morris-0.4.3.min.js"></script>
     <script src="assets/js/common-scripts.js"></script>
 
     <!--script for this page-->
-  
-  <script type="text/javascript">
-      $(function() {
-        //    fancybox
-          jQuery(".fancybox").fancybox();
-      });
-
-  </script>
-  
+    <script src="assets/js/morris-conf.js"></script>
+    
   <script>
       //custom select box
 
       $(function(){
-          $("select.styled").customSelect();
+          $('select.styled').customSelect();
       });
 
   </script>

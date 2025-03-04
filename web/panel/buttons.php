@@ -1,3 +1,10 @@
+<?php
+session_start();
+if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
+    header('Location: /login.php');
+    exit;
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -13,7 +20,6 @@
     <link href="assets/css/bootstrap.css" rel="stylesheet">
     <!--external css-->
     <link href="assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
-    <link href="assets/js/fullcalendar/bootstrap-fullcalendar.css" rel="stylesheet" />
         
     <!-- Custom styles for this template -->
     <link href="assets/css/style.css" rel="stylesheet">
@@ -38,14 +44,14 @@
                   <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
               </div>
             <!--logo start-->
-            <a href="index.html" class="logo"><b>DASHGUM FREE</b></a>
+            <a href="index.php" class="logo"><b>DASHGUM FREE</b></a>
             <!--logo end-->
             <div class="nav notify-row" id="top_menu">
                 <!--  notification start -->
                 <ul class="nav top-menu">
                     <!-- settings start -->
                     <li class="dropdown">
-                        <a data-toggle="dropdown" class="dropdown-toggle" href="index.html#">
+                        <a data-toggle="dropdown" class="dropdown-toggle" href="index.php#">
                             <i class="fa fa-tasks"></i>
                             <span class="badge bg-theme">4</span>
                         </a>
@@ -55,7 +61,7 @@
                                 <p class="green">You have 4 pending tasks</p>
                             </li>
                             <li>
-                                <a href="index.html#">
+                                <a href="index.php#">
                                     <div class="task-info">
                                         <div class="desc">DashGum Admin Panel</div>
                                         <div class="percent">40%</div>
@@ -68,7 +74,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="index.html#">
+                                <a href="index.php#">
                                     <div class="task-info">
                                         <div class="desc">Database Update</div>
                                         <div class="percent">60%</div>
@@ -81,7 +87,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="index.html#">
+                                <a href="index.php#">
                                     <div class="task-info">
                                         <div class="desc">Product Development</div>
                                         <div class="percent">80%</div>
@@ -94,7 +100,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="index.html#">
+                                <a href="index.php#">
                                     <div class="task-info">
                                         <div class="desc">Payments Sent</div>
                                         <div class="percent">70%</div>
@@ -114,7 +120,7 @@
                     <!-- settings end -->
                     <!-- inbox dropdown start-->
                     <li id="header_inbox_bar" class="dropdown">
-                        <a data-toggle="dropdown" class="dropdown-toggle" href="index.html#">
+                        <a data-toggle="dropdown" class="dropdown-toggle" href="index.php#">
                             <i class="fa fa-envelope-o"></i>
                             <span class="badge bg-theme">5</span>
                         </a>
@@ -124,7 +130,7 @@
                                 <p class="green">You have 5 new messages</p>
                             </li>
                             <li>
-                                <a href="index.html#">
+                                <a href="index.php#">
                                     <span class="photo"><img alt="avatar" src="assets/img/ui-zac.jpg"></span>
                                     <span class="subject">
                                     <span class="from">Zac Snider</span>
@@ -136,7 +142,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="index.html#">
+                                <a href="index.php#">
                                     <span class="photo"><img alt="avatar" src="assets/img/ui-divya.jpg"></span>
                                     <span class="subject">
                                     <span class="from">Divya Manian</span>
@@ -148,7 +154,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="index.html#">
+                                <a href="index.php#">
                                     <span class="photo"><img alt="avatar" src="assets/img/ui-danro.jpg"></span>
                                     <span class="subject">
                                     <span class="from">Dan Rogers</span>
@@ -160,7 +166,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="index.html#">
+                                <a href="index.php#">
                                     <span class="photo"><img alt="avatar" src="assets/img/ui-sherman.jpg"></span>
                                     <span class="subject">
                                     <span class="from">Dj Sherman</span>
@@ -172,7 +178,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="index.html#">See all messages</a>
+                                <a href="index.php#">See all messages</a>
                             </li>
                         </ul>
                     </li>
@@ -182,7 +188,7 @@
             </div>
             <div class="top-menu">
             	<ul class="nav pull-right top-menu">
-                    <li><a class="logout" href="login.html">Logout</a></li>
+                    <li><a class="logout" href="login.php">Logout</a></li>
             	</ul>
             </div>
         </header>
@@ -197,37 +203,37 @@
               <!-- sidebar menu start-->
               <ul class="sidebar-menu" id="nav-accordion">
               
-              	  <p class="centered"><a href="profile.html"><img src="assets/img/ui-sam.jpg" class="img-circle" width="60"></a></p>
+              	  <p class="centered"><a href="profile.php"><img src="assets/img/ui-sam.jpg" class="img-circle" width="60"></a></p>
               	  <h5 class="centered">Marcel Newman</h5>
               	  	
                   <li class="mt">
-                      <a href="index.html">
+                      <a href="index.php">
                           <i class="fa fa-dashboard"></i>
                           <span>Dashboard</span>
                       </a>
                   </li>
 
                   <li class="sub-menu">
-                      <a href="javascript:;" >
+                      <a class="active" href="javascript:;" >
                           <i class="fa fa-desktop"></i>
                           <span>UI Elements</span>
                       </a>
                       <ul class="sub">
-                          <li><a  href="general.html">General</a></li>
-                          <li><a  href="buttons.html">Buttons</a></li>
-                          <li><a  href="panels.html">Panels</a></li>
+                          <li><a  href="general.php">General</a></li>
+                          <li class="active"><a  href="buttons.php">Buttons</a></li>
+                          <li><a  href="panels.php">Panels</a></li>
                       </ul>
                   </li>
 
                   <li class="sub-menu">
-                      <a class="active" href="javascript:;" >
+                      <a href="javascript:;" >
                           <i class="fa fa-cogs"></i>
                           <span>Components</span>
                       </a>
                       <ul class="sub">
-                          <li class="active"><a  href="calendar.html">Calendar</a></li>
-                          <li><a  href="gallery.html">Gallery</a></li>
-                          <li><a  href="todo_list.html">Todo List</a></li>
+                          <li><a  href="calendar.php">Calendar</a></li>
+                          <li><a  href="gallery.php">Gallery</a></li>
+                          <li><a  href="todo_list.php">Todo List</a></li>
                       </ul>
                   </li>
                   <li class="sub-menu">
@@ -236,9 +242,9 @@
                           <span>Extra Pages</span>
                       </a>
                       <ul class="sub">
-                          <li><a  href="blank.html">Blank Page</a></li>
-                          <li><a  href="login.html">Login</a></li>
-                          <li><a  href="lock_screen.html">Lock Screen</a></li>
+                          <li><a  href="blank.php">Blank Page</a></li>
+                          <li><a  href="login.php">Login</a></li>
+                          <li><a  href="lock_screen.php">Lock Screen</a></li>
                       </ul>
                   </li>
                   <li class="sub-menu">
@@ -247,7 +253,7 @@
                           <span>Forms</span>
                       </a>
                       <ul class="sub">
-                          <li><a  href="form_component.html">Form Components</a></li>
+                          <li><a  href="form_component.php">Form Components</a></li>
                       </ul>
                   </li>
                   <li class="sub-menu">
@@ -256,8 +262,8 @@
                           <span>Data Tables</span>
                       </a>
                       <ul class="sub">
-                          <li><a  href="basic_table.html">Basic Table</a></li>
-                          <li><a  href="responsive_table.html">Responsive Table</a></li>
+                          <li><a  href="basic_table.php">Basic Table</a></li>
+                          <li><a  href="responsive_table.php">Responsive Table</a></li>
                       </ul>
                   </li>
                   <li class="sub-menu">
@@ -266,8 +272,8 @@
                           <span>Charts</span>
                       </a>
                       <ul class="sub">
-                          <li><a  href="morris.html">Morris</a></li>
-                          <li><a  href="chartjs.html">Chartjs</a></li>
+                          <li><a  href="morris.php">Morris</a></li>
+                          <li><a  href="chartjs.php">Chartjs</a></li>
                       </ul>
                   </li>
 
@@ -276,44 +282,189 @@
           </div>
       </aside>
       <!--sidebar end-->
-
+      
       <!-- **********************************************************************************************************************************************************
       MAIN CONTENT
       *********************************************************************************************************************************************************** -->
       <!--main content start-->
       <section id="main-content">
           <section class="wrapper">
-          	<h3><i class="fa fa-angle-right"></i> Calendar</h3>
-              <!-- page start-->
-              <div class="row mt">
-                  <aside class="col-lg-3 mt">
-                      <h4><i class="fa fa-angle-right"></i> Draggable Events</h4>
-                      <div id="external-events">
-                          <div class="external-event label label-theme">My Event 1</div>
-                          <div class="external-event label label-success">My Event 2</div>
-                          <div class="external-event label label-info">My Event 3</div>
-                          <div class="external-event label label-warning">My Event 4</div>
-                          <div class="external-event label label-danger">My Event 5</div>
-                          <div class="external-event label label-default">My Event 6</div>
-                          <div class="external-event label label-theme">My Event 7</div>
-                          <div class="external-event label label-info">My Event 8</div>
-                          <div class="external-event label label-success">My Event 9</div>
-                          <p class="drop-after">
-                              <input type="checkbox" id="drop-remove">
-                              Remove After Drop
-                          </p>
-                      </div>
-                  </aside>
-                  <aside class="col-lg-9 mt">
-                      <section class="panel">
-                          <div class="panel-body">
-                              <div id="calendar" class="has-toolbar"></div>
-                          </div>
-                      </section>
-                  </aside>
-              </div>
-              <!-- page end-->
-		</section><! --/wrapper -->
+      		<div class="row mt">
+      			<div class="col-lg-6 col-md-6 col-sm-12">
+      				<! -- BASIC BUTTONS -->
+      				<div class="showback">
+      					<h4><i class="fa fa-angle-right"></i> Basic Buttons</h4>
+						<button type="button" class="btn btn-default">Default</button>
+						<button type="button" class="btn btn-primary">Primary</button>
+						<button type="button" class="btn btn-success">Success</button>
+						<button type="button" class="btn btn-info">Info</button>
+						<button type="button" class="btn btn-warning">Warning</button>
+						<button type="button" class="btn btn-danger">Danger</button>
+      				</div><!-- /showback -->
+      				
+      				<! -- BUTTONS ROUND -->
+      				<div class="showback">
+      					<h4><i class="fa fa-angle-right"></i> Buttons Round</h4>
+						<button type="button" class="btn btn-round btn-default">Default</button>
+						<button type="button" class="btn btn-round btn-primary">Primary</button>
+						<button type="button" class="btn btn-round btn-success">Success</button>
+						<button type="button" class="btn btn-round btn-info">Info</button>
+						<button type="button" class="btn btn-round btn-warning">Warning</button>
+						<button type="button" class="btn btn-round btn-danger">Danger</button>
+      				</div><!-- /showback -->
+      				
+      				<! -- THEME BUTTONS -->
+      				<div class="showback">
+      					<h4><i class="fa fa-angle-right"></i> Theme Buttons</h4>
+						<!-- Standard button -->
+						<button type="button" class="btn btn-theme">Theme</button>
+						<button type="button" class="btn btn-theme02">Theme 02</button>
+						<button type="button" class="btn btn-theme03">Theme 03</button>
+						<button type="button" class="btn btn-theme04">Theme 04</button>
+      				</div><!-- /showback -->
+      				
+      				<! -- BUTTONS GROUP -->
+      				<div class="showback">
+      					<h4><i class="fa fa-angle-right"></i> Buttons Group</h4>
+						<div class="btn-group">
+						  <button type="button" class="btn btn-default">Left</button>
+						  <button type="button" class="btn btn-default">Middle</button>
+						  <button type="button" class="btn btn-default">Right</button>
+						</div>      				
+      				</div><!-- /showback -->
+      				
+      				<! -- BUTTONS NESTING -->
+      				<div class="showback">
+      					<h4><i class="fa fa-angle-right"></i> Button Nesting</h4>
+						<div class="btn-group">
+						  <button type="button" class="btn btn-default">1</button>
+						  <button type="button" class="btn btn-default">2</button>
+						
+						  <div class="btn-group">
+						    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+						      Dropdown
+						      <span class="caret"></span>
+						    </button>
+						    <ul class="dropdown-menu">
+						      <li><a href="#">Dropdown link</a></li>
+						      <li><a href="#">Dropdown link</a></li>
+						    </ul>
+						  </div>
+						</div>      					
+      				</div><!-- /showback -->
+      				
+      				<! -- SPLIT BUTTONS -->
+      				<div class="showback">
+      					<h4><i class="fa fa-angle-right"></i> Split Buttons</h4>
+						<!-- Split button -->
+						<div class="btn-group">
+						  <button type="button" class="btn btn-theme03">Action</button>
+						  <button type="button" class="btn btn-theme03 dropdown-toggle" data-toggle="dropdown">
+						    <span class="caret"></span>
+						    <span class="sr-only">Toggle Dropdown</span>
+						  </button>
+						  <ul class="dropdown-menu" role="menu">
+						    <li><a href="#">Action</a></li>
+						    <li><a href="#">Another action</a></li>
+						    <li><a href="#">Something else here</a></li>
+						    <li class="divider"></li>
+						    <li><a href="#">Separated link</a></li>
+						  </ul>
+						</div>      				
+      				
+      				</div><!-- /showback -->
+      				
+      			</div><! --/col-lg-6 -->
+      			
+      			
+      			<div class="col-lg-6 col-md-6 col-sm-12">
+      				<! -- BUTTONS SIZES -->
+      				<div class="showback">
+      					<h4><i class="fa fa-angle-right"></i> Buttons Sizes</h4>
+						<p>
+						  <button type="button" class="btn btn-primary btn-lg">Large button</button>
+						  <button type="button" class="btn btn-default btn-lg">Large button</button>
+						</p>
+						<p>
+						  <button type="button" class="btn btn-primary">Default button</button>
+						  <button type="button" class="btn btn-default">Default button</button>
+						</p>
+						<p>
+						  <button type="button" class="btn btn-primary btn-sm">Small button</button>
+						  <button type="button" class="btn btn-default btn-sm">Small button</button>
+						</p>
+						<p>
+						  <button type="button" class="btn btn-primary btn-xs">Extra small button</button>
+						  <button type="button" class="btn btn-default btn-xs">Extra small button</button>
+						</p>      					
+      				</div><!-- /showback -->
+      				
+      				<!-- BUTTON BLOCK -->
+      				<div class="showback">
+      					<h4><i class="fa fa-angle-right"></i> Block Buttons</h4>
+						<button type="button" class="btn btn-primary btn-lg btn-block">Block level button</button>
+						<button type="button" class="btn btn-default btn-lg btn-block">Block level button</button>
+      				</div><!--/showback -->
+      				
+      				<!-- JUSTIFIED BUTTONS -->
+      				<div class="showback">
+      					<h4><i class="fa fa-angle-right"></i> Justified Buttons</h4>
+						<div class="btn-group btn-group-justified">
+						  <div class="btn-group">
+						    <button type="button" class="btn btn-theme">Left</button>
+						  </div>
+						  <div class="btn-group">
+						    <button type="button" class="btn btn-theme">Middle</button>
+						  </div>
+						  <div class="btn-group">
+						    <button type="button" class="btn btn-theme">Right</button>
+						  </div>
+						</div>      				
+      				</div><!--/showback -->
+      				
+      				<!-- DROPDOWN BUTTONS -->
+      				<div class="showback">
+      					<h4><i class="fa fa-angle-right"></i> Dropdown Buttons</h4>
+      					<!-- Single button -->
+						<div class="btn-group">
+						  <button type="button" class="btn btn-theme dropdown-toggle" data-toggle="dropdown">
+						    Action <span class="caret"></span>
+						  </button>
+						  <ul class="dropdown-menu" role="menu">
+						    <li><a href="#">Action</a></li>
+						    <li><a href="#">Another action</a></li>
+						    <li><a href="#">Something else here</a></li>
+						    <li class="divider"></li>
+						    <li><a href="#">Separated link</a></li>
+						  </ul>
+						</div>
+      					<!-- Single button -->
+						<div class="btn-group">
+						  <button type="button" class="btn btn-theme04 dropdown-toggle" data-toggle="dropdown">
+						    Action <span class="caret"></span>
+						  </button>
+						  <ul class="dropdown-menu" role="menu">
+						    <li><a href="#">Action</a></li>
+						    <li><a href="#">Another action</a></li>
+						    <li><a href="#">Something else here</a></li>
+						    <li class="divider"></li>
+						    <li><a href="#">Separated link</a></li>
+						  </ul>
+						</div>
+      				</div><!-- /showback -->
+      				
+      				<!-- BUTTONS WITH ICONS -->
+      				<div class="showback">
+      					<h4><i class="fa fa-angle-right"></i> Buttons With Icons</h4>
+						<button type="button" class="btn btn-theme"><i class="fa fa-cog"></i> Button</button>
+						<button type="button" class="btn btn-theme02"><i class="fa fa-check"></i> Button</button>
+						<button type="button" class="btn btn-theme04"><i class="fa fa-heart"></i> Button</button>
+      				</div><!-- /showback -->
+      			
+      			</div><!-- /col-lg-6 -->
+      			
+      		</div><!--/ row -->
+          </section><! --/wrapper -->
       </section><!-- /MAIN CONTENT -->
 
       <!--main content end-->
@@ -321,7 +472,7 @@
       <footer class="site-footer">
           <div class="text-center">
               2014 - Alvarez.is
-              <a href="calendar.html#" class="go-top">
+              <a href="buttons.php#" class="go-top">
                   <i class="fa fa-angle-up"></i>
               </a>
           </div>
@@ -331,8 +482,7 @@
 
     <!-- js placed at the end of the document so the pages load faster -->
     <script src="assets/js/jquery.js"></script>
-    <script src="assets/js/jquery-ui-1.9.2.custom.min.js"></script>
-	<script src="assets/js/fullcalendar/fullcalendar.min.js"></script>    
+    <script src="assets/js/jjquery-1.8.3.min.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>
     <script class="include" type="text/javascript" src="assets/js/jquery.dcjqaccordion.2.7.js"></script>
     <script src="assets/js/jquery.scrollTo.min.js"></script>
@@ -343,13 +493,12 @@
     <script src="assets/js/common-scripts.js"></script>
 
     <!--script for this page-->
-	<script src="assets/js/calendar-conf-events.js"></script>    
-  
+    
   <script>
       //custom select box
 
       $(function(){
-          $("select.styled").customSelect();
+          $('select.styled').customSelect();
       });
 
   </script>

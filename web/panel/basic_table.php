@@ -1,3 +1,10 @@
+<?php
+session_start();
+if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
+    header('Location: /login.php');
+    exit;
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -17,7 +24,6 @@
     <!-- Custom styles for this template -->
     <link href="assets/css/style.css" rel="stylesheet">
     <link href="assets/css/style-responsive.css" rel="stylesheet">
-    
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -38,14 +44,14 @@
                   <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
               </div>
             <!--logo start-->
-            <a href="index.html" class="logo"><b>DASHGUM FREE</b></a>
+            <a href="index.php" class="logo"><b>DASHGUM FREE</b></a>
             <!--logo end-->
             <div class="nav notify-row" id="top_menu">
                 <!--  notification start -->
                 <ul class="nav top-menu">
                     <!-- settings start -->
                     <li class="dropdown">
-                        <a data-toggle="dropdown" class="dropdown-toggle" href="index.html#">
+                        <a data-toggle="dropdown" class="dropdown-toggle" href="index.php#">
                             <i class="fa fa-tasks"></i>
                             <span class="badge bg-theme">4</span>
                         </a>
@@ -55,7 +61,7 @@
                                 <p class="green">You have 4 pending tasks</p>
                             </li>
                             <li>
-                                <a href="index.html#">
+                                <a href="index.php#">
                                     <div class="task-info">
                                         <div class="desc">DashGum Admin Panel</div>
                                         <div class="percent">40%</div>
@@ -68,7 +74,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="index.html#">
+                                <a href="index.php#">
                                     <div class="task-info">
                                         <div class="desc">Database Update</div>
                                         <div class="percent">60%</div>
@@ -81,7 +87,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="index.html#">
+                                <a href="index.php#">
                                     <div class="task-info">
                                         <div class="desc">Product Development</div>
                                         <div class="percent">80%</div>
@@ -94,7 +100,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="index.html#">
+                                <a href="index.php#">
                                     <div class="task-info">
                                         <div class="desc">Payments Sent</div>
                                         <div class="percent">70%</div>
@@ -114,7 +120,7 @@
                     <!-- settings end -->
                     <!-- inbox dropdown start-->
                     <li id="header_inbox_bar" class="dropdown">
-                        <a data-toggle="dropdown" class="dropdown-toggle" href="index.html#">
+                        <a data-toggle="dropdown" class="dropdown-toggle" href="index.php#">
                             <i class="fa fa-envelope-o"></i>
                             <span class="badge bg-theme">5</span>
                         </a>
@@ -124,7 +130,7 @@
                                 <p class="green">You have 5 new messages</p>
                             </li>
                             <li>
-                                <a href="index.html#">
+                                <a href="index.php#">
                                     <span class="photo"><img alt="avatar" src="assets/img/ui-zac.jpg"></span>
                                     <span class="subject">
                                     <span class="from">Zac Snider</span>
@@ -136,7 +142,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="index.html#">
+                                <a href="index.php#">
                                     <span class="photo"><img alt="avatar" src="assets/img/ui-divya.jpg"></span>
                                     <span class="subject">
                                     <span class="from">Divya Manian</span>
@@ -148,7 +154,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="index.html#">
+                                <a href="index.php#">
                                     <span class="photo"><img alt="avatar" src="assets/img/ui-danro.jpg"></span>
                                     <span class="subject">
                                     <span class="from">Dan Rogers</span>
@@ -160,7 +166,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="index.html#">
+                                <a href="index.php#">
                                     <span class="photo"><img alt="avatar" src="assets/img/ui-sherman.jpg"></span>
                                     <span class="subject">
                                     <span class="from">Dj Sherman</span>
@@ -172,7 +178,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="index.html#">See all messages</a>
+                                <a href="index.php#">See all messages</a>
                             </li>
                         </ul>
                     </li>
@@ -182,7 +188,7 @@
             </div>
             <div class="top-menu">
             	<ul class="nav pull-right top-menu">
-                    <li><a class="logout" href="login.html">Logout</a></li>
+                    <li><a class="logout" href="login.php">Logout</a></li>
             	</ul>
             </div>
         </header>
@@ -197,11 +203,11 @@
               <!-- sidebar menu start-->
               <ul class="sidebar-menu" id="nav-accordion">
               
-              	  <p class="centered"><a href="profile.html"><img src="assets/img/ui-sam.jpg" class="img-circle" width="60"></a></p>
+              	  <p class="centered"><a href="profile.php"><img src="assets/img/ui-sam.jpg" class="img-circle" width="60"></a></p>
               	  <h5 class="centered">Marcel Newman</h5>
               	  	
                   <li class="mt">
-                      <a href="index.html">
+                      <a href="index.php">
                           <i class="fa fa-dashboard"></i>
                           <span>Dashboard</span>
                       </a>
@@ -213,9 +219,9 @@
                           <span>UI Elements</span>
                       </a>
                       <ul class="sub">
-                          <li><a  href="general.html">General</a></li>
-                          <li><a  href="buttons.html">Buttons</a></li>
-                          <li><a  href="panels.html">Panels</a></li>
+                          <li><a  href="general.php">General</a></li>
+                          <li><a  href="buttons.php">Buttons</a></li>
+                          <li><a  href="panels.php">Panels</a></li>
                       </ul>
                   </li>
 
@@ -225,9 +231,9 @@
                           <span>Components</span>
                       </a>
                       <ul class="sub">
-                          <li><a  href="calendar.html">Calendar</a></li>
-                          <li><a  href="gallery.html">Gallery</a></li>
-                          <li><a  href="todo_list.html">Todo List</a></li>
+                          <li><a  href="calendar.php">Calendar</a></li>
+                          <li><a  href="gallery.php">Gallery</a></li>
+                          <li><a  href="todo_list.php">Todo List</a></li>
                       </ul>
                   </li>
                   <li class="sub-menu">
@@ -236,9 +242,9 @@
                           <span>Extra Pages</span>
                       </a>
                       <ul class="sub">
-                          <li><a  href="blank.html">Blank Page</a></li>
-                          <li><a  href="login.html">Login</a></li>
-                          <li><a  href="lock_screen.html">Lock Screen</a></li>
+                          <li><a  href="blank.php">Blank Page</a></li>
+                          <li><a  href="login.php">Login</a></li>
+                          <li><a  href="lock_screen.php">Lock Screen</a></li>
                       </ul>
                   </li>
                   <li class="sub-menu">
@@ -247,27 +253,27 @@
                           <span>Forms</span>
                       </a>
                       <ul class="sub">
-                          <li><a  href="form_component.html">Form Components</a></li>
-                      </ul>
-                  </li>
-                  <li class="sub-menu">
-                      <a href="javascript:;" >
-                          <i class="fa fa-th"></i>
-                          <span>Data Tables</span>
-                      </a>
-                      <ul class="sub">
-                          <li><a  href="basic_table.html">Basic Table</a></li>
-                          <li><a  href="responsive_table.html">Responsive Table</a></li>
+                          <li><a  href="form_component.php">Form Components</a></li>
                       </ul>
                   </li>
                   <li class="sub-menu">
                       <a class="active" href="javascript:;" >
+                          <i class="fa fa-th"></i>
+                          <span>Data Tables</span>
+                      </a>
+                      <ul class="sub">
+                          <li class="active"><a  href="basic_table.php">Basic Table</a></li>
+                          <li><a  href="responsive_table.php">Responsive Table</a></li>
+                      </ul>
+                  </li>
+                  <li class="sub-menu">
+                      <a href="javascript:;" >
                           <i class=" fa fa-bar-chart-o"></i>
                           <span>Charts</span>
                       </a>
                       <ul class="sub">
-                          <li class="active"><a  href="morris.html">Morris</a></li>
-                          <li><a  href="chartjs.html">Chartjs</a></li>
+                          <li><a  href="morris.php">Morris</a></li>
+                          <li><a  href="chartjs.php">Chartjs</a></li>
                       </ul>
                   </li>
 
@@ -283,66 +289,174 @@
       <!--main content start-->
       <section id="main-content">
           <section class="wrapper">
-          <h3><i class="fa fa-angle-right"></i> Chartjs Charts</h3>
-              <!-- page start-->
-              <div class="tab-pane" id="chartjs">
-                  <div class="row mt">
-                      <div class="col-lg-6">
-                          <div class="content-panel">
-							  <h4><i class="fa fa-angle-right"></i> Doughnut</h4>
-                              <div class="panel-body text-center">
-                                  <canvas id="doughnut" height="300" width="400"></canvas>
-                              </div>
-                          </div>
-                      </div>
-                      <div class="col-lg-6">
-                          <div class="content-panel">
-							  <h4><i class="fa fa-angle-right"></i> Line</h4>
-                              <div class="panel-body text-center">
-                                  <canvas id="line" height="300" width="400"></canvas>
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-                  <div class="row mt">
-                      <div class="col-lg-6">
-                          <div class="content-panel">
-							  <h4><i class="fa fa-angle-right"></i> Radar</h4>
-                              <div class="panel-body text-center">
-                                  <canvas id="radar" height="300" width="400"></canvas>
-                              </div>
-                          </div>
-                      </div>
-                      <div class="col-lg-6">
-                          <div class="content-panel">
-							  <h4><i class="fa fa-angle-right"></i> Polar Area</h4>
-                              <div class="panel-body text-center">
-                                  <canvas id="polarArea" height="300" width="400"></canvas>
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-                  <div class="row mt">
-                      <div class="col-lg-6">
-                          <div class="content-panel">
-							  <h4><i class="fa fa-angle-right"></i> Bar</h4>
-                              <div class="panel-body text-center">
-                                  <canvas id="bar" height="300" width="400"></canvas>
-                              </div>
-                          </div>
-                      </div>
-                      <div class="col-lg-6">
-                          <div class="content-panel">
-							  <h4><i class="fa fa-angle-right"></i> Pie</h4>
-                              <div class="panel-body text-center">
-                                  <canvas id="pie" height="300" width="400"></canvas>
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-              <!-- page end-->
-          </section>          
+          	<h3><i class="fa fa-angle-right"></i> Basic Table Examples</h3>
+				<div class="row">
+				
+	                  <div class="col-md-12">
+	                  	  <div class="content-panel">
+	                  	  	  <h4><i class="fa fa-angle-right"></i> Basic Table</h4>
+	                  	  	  <hr>
+		                      <table class="table">
+		                          <thead>
+		                          <tr>
+		                              <th>#</th>
+		                              <th>First Name</th>
+		                              <th>Last Name</th>
+		                              <th>Username</th>
+		                          </tr>
+		                          </thead>
+		                          <tbody>
+		                          <tr>
+		                              <td>1</td>
+		                              <td>Mark</td>
+		                              <td>Otto</td>
+		                              <td>@mdo</td>
+		                          </tr>
+		                          <tr>
+		                              <td>2</td>
+		                              <td>Jacob</td>
+		                              <td>Thornton</td>
+		                              <td>@fat</td>
+		                          </tr>
+		                          <tr>
+		                              <td>3</td>
+		                              <td>Larry</td>
+		                              <td>the Bird</td>
+		                              <td>@twitter</td>
+		                          </tr>
+		                          </tbody>
+		                      </table>
+	                  	  </div><! --/content-panel -->
+	                  </div><!-- /col-md-12 -->
+                  
+	                  <div class="col-md-12 mt">
+	                  	<div class="content-panel">
+	                          <table class="table table-hover">
+	                  	  	  <h4><i class="fa fa-angle-right"></i> Hover Table</h4>
+	                  	  	  <hr>
+	                              <thead>
+	                              <tr>
+	                                  <th>#</th>
+	                                  <th>First Name</th>
+	                                  <th>Last Name</th>
+	                                  <th>Username</th>
+	                              </tr>
+	                              </thead>
+	                              <tbody>
+	                              <tr>
+	                                  <td>1</td>
+	                                  <td>Mark</td>
+	                                  <td>Otto</td>
+	                                  <td>@mdo</td>
+	                              </tr>
+	                              <tr>
+	                                  <td>2</td>
+	                                  <td>Jacob</td>
+	                                  <td>Thornton</td>
+	                                  <td>@fat</td>
+	                              </tr>
+	                              <tr>
+	                                  <td>3</td>
+	                                  <td>Simon</td>
+	                                  <td>Mosa</td>
+	                                  <td>@twitter</td>
+	                              </tr>
+	                              </tbody>
+	                          </table>
+	                  	  </div><! --/content-panel -->
+	                  </div><!-- /col-md-12 -->
+				</div><!-- row -->
+
+              <div class="row mt">
+                  <div class="col-md-12">
+                      <div class="content-panel">
+                          <table class="table table-striped table-advance table-hover">
+	                  	  	  <h4><i class="fa fa-angle-right"></i> Advanced Table</h4>
+	                  	  	  <hr>
+                              <thead>
+                              <tr>
+                                  <th><i class="fa fa-bullhorn"></i> Company</th>
+                                  <th class="hidden-phone"><i class="fa fa-question-circle"></i> Descrition</th>
+                                  <th><i class="fa fa-bookmark"></i> Profit</th>
+                                  <th><i class=" fa fa-edit"></i> Status</th>
+                                  <th></th>
+                              </tr>
+                              </thead>
+                              <tbody>
+                              <tr>
+                                  <td><a href="basic_table.php#">Company Ltd</a></td>
+                                  <td class="hidden-phone">Lorem Ipsum dolor</td>
+                                  <td>12000.00$ </td>
+                                  <td><span class="label label-info label-mini">Due</span></td>
+                                  <td>
+                                      <button class="btn btn-success btn-xs"><i class="fa fa-check"></i></button>
+                                      <button class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></button>
+                                      <button class="btn btn-danger btn-xs"><i class="fa fa-trash-o "></i></button>
+                                  </td>
+                              </tr>
+                              <tr>
+                                  <td>
+                                      <a href="basic_table.php#">
+                                          Dashgum co
+                                      </a>
+                                  </td>
+                                  <td class="hidden-phone">Lorem Ipsum dolor</td>
+                                  <td>17900.00$ </td>
+                                  <td><span class="label label-warning label-mini">Due</span></td>
+                                  <td>
+                                      <button class="btn btn-success btn-xs"><i class="fa fa-check"></i></button>
+                                      <button class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></button>
+                                      <button class="btn btn-danger btn-xs"><i class="fa fa-trash-o "></i></button>
+                                  </td>
+                              </tr>
+                              <tr>
+                                  <td>
+                                      <a href="basic_table.php#">
+                                          Another Co
+                                      </a>
+                                  </td>
+                                  <td class="hidden-phone">Lorem Ipsum dolor</td>
+                                  <td>14400.00$ </td>
+                                  <td><span class="label label-success label-mini">Paid</span></td>
+                                  <td>
+                                      <button class="btn btn-success btn-xs"><i class="fa fa-check"></i></button>
+                                      <button class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></button>
+                                      <button class="btn btn-danger btn-xs"><i class="fa fa-trash-o "></i></button>
+                                  </td>
+                              </tr>
+                              <tr>
+                                  <td>
+                                      <a href="basic_table.php#">
+                                          Dashgum ext
+                                      </a>
+                                  </td>
+                                  <td class="hidden-phone">Lorem Ipsum dolor</td>
+                                  <td>22000.50$ </td>
+                                  <td><span class="label label-success label-mini">Paid</span></td>
+                                  <td>
+                                      <button class="btn btn-success btn-xs"><i class="fa fa-check"></i></button>
+                                      <button class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></button>
+                                      <button class="btn btn-danger btn-xs"><i class="fa fa-trash-o "></i></button>
+                                  </td>
+                              </tr>
+                              <tr>
+                                  <td><a href="basic_table.php#">Total Ltd</a></td>
+                                  <td class="hidden-phone">Lorem Ipsum dolor</td>
+                                  <td>12120.00$ </td>
+                                  <td><span class="label label-warning label-mini">Due</span></td>
+                                  <td>
+                                      <button class="btn btn-success btn-xs"><i class="fa fa-check"></i></button>
+                                      <button class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></button>
+                                      <button class="btn btn-danger btn-xs"><i class="fa fa-trash-o "></i></button>
+                                  </td>
+                              </tr>
+                              </tbody>
+                          </table>
+                      </div><!-- /content-panel -->
+                  </div><!-- /col-md-12 -->
+              </div><!-- /row -->
+
+		</section><! --/wrapper -->
       </section><!-- /MAIN CONTENT -->
 
       <!--main content end-->
@@ -350,7 +464,7 @@
       <footer class="site-footer">
           <div class="text-center">
               2014 - Alvarez.is
-              <a href="chartjs.html#" class="go-top">
+              <a href="basic_table.php#" class="go-top">
                   <i class="fa fa-angle-up"></i>
               </a>
           </div>
@@ -370,8 +484,6 @@
     <script src="assets/js/common-scripts.js"></script>
 
     <!--script for this page-->
-    <script src="assets/js/chart-master/Chart.js"></script>
-    <script src="assets/js/chartjs-conf.js"></script>
     
   <script>
       //custom select box
