@@ -27,6 +27,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel='stylesheet' href='./css/login.css'>
     <title>Register</title>
 </head>
 <body>
@@ -38,8 +39,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <label for="password">Password:</label>
         <input type="password" id="password" name="password" required>
         <br>
-        <input type="submit" value="Register">
+        <input type="submit" value="Register"><hr>
+        <p>Already have an account? <a href="login.php">Login here</a>.</p>
     </form>
-    <p>Already have an account? <a href="login.php">Login here</a>.</p>
+    
 </body>
 </html>

@@ -7,6 +7,13 @@ if (!$db) {
     die("Connection failed: " . $db->lastErrorMsg());
 }
 
+// Create the users table if it doesn't exist
+$db->exec("CREATE TABLE IF NOT EXISTS users (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    username TEXT NOT NULL UNIQUE,
+    password TEXT NOT NULL
+)");
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $username = $_POST['username'];
     $password = $_POST['password'];
@@ -30,4 +37,4 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         echo "Invalid username or password.";
     }
 }
-?> 
+?>

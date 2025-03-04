@@ -6,15 +6,16 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
 }
 ?>
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>User Panel</title>
+    <link rel="stylesheet" href="./css/panel.css">
 </head>
 <body>
-    <h2>Welcome, <?php echo htmlspecialchars($_SESSION['username']); ?>!</h2>
+    <h1>Welcome, <?php echo htmlspecialchars($_SESSION['username']); ?>!</h1>
     <p>This is your user panel.</p>
-    <a href="logout.php">Logout</a>
 </body>
 </html>

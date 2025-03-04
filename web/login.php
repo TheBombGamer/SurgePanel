@@ -11,7 +11,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
 <head>
     <meta charset="UTF-8">
     <title>Login</title>
-    <link rel='stylesheet' href='./login.css'>
+    <link rel='stylesheet' href='./css/login.css'>
 </head>
 <body>
     <h2>Login</h2>
@@ -22,8 +22,8 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
         <label for="password">Password:</label>
         <input type="password" id="password" name="password" required>
         <br>
-        <input type="submit" value="Login">
+        <input type="submit" value="Login"><hr>
+        <p>Don't have an account? <a href="register.php">Register here</a>.</p>
     </form>
-    <p>Don't have an account? <a href="register.php">Register here</a>.</p>
 </body>
 </html>
