@@ -2,7 +2,7 @@
 FROM php:8.0-cli
 
 # Set the working directory
-WORKDIR /web
+WORKDIR /app
 
 # Copy the current directory contents into the container at /app
 COPY . .
@@ -18,4 +18,4 @@ RUN apt-get update && apt-get install -y \
 EXPOSE 10000
 
 # Command to run the application
-CMD ["php", "-S", "0.0.0.0:10000", "-t", "public"]
+CMD ["php", "-S", "0.0.0.0:10000", "-t", "web"]
