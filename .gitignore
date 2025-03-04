@@ -4,7 +4,6 @@
 *.secret
 hidden/
 node_modules/
-*.db
 *.tmp
 *.cache
 *.conf
