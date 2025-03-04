@@ -1,6 +1,5 @@
 *.env
 *.log
-*.sh.*
 *.secret
 hidden/
 node_modules/
