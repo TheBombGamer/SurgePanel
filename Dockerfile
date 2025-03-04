@@ -2,7 +2,7 @@
 FROM php:8.0-cli
 
 # Set the working directory
-WORKDIR /app
+WORKDIR /web
 
 # Copy the current directory contents into the container at /app
 COPY . .
