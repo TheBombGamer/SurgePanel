@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash/
 
 loading() {
     width=120
