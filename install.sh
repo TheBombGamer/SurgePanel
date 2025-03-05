@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash/
 # Surge Panel Installation Wrapper
 # Currently Supported Operating Systems:
 #   Ubuntu
