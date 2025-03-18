@@ -141,6 +141,5 @@ else
     sleep 2
 fi
 # if you see this thats a problem!
-echo 'how the fuck did you get this message to send? god damn you broke this shit!'
-echo '# if you see this thats a problem!'
-exit 0
+
+exit 1
